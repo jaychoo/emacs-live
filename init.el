@@ -72,28 +72,27 @@
 )
 
 ;; ############ TEMPORARY ##  gotta figure out where to put this
-;; remap C-x C-b to show buffers in current window 
-;; (global-set-key [C-x C-b] 'list-buffers)
+;; remap C-x C-b to show buffers in current window
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
-;; toggle sr-speedbar
-(global-set-key (kbd "M-s M-s") 'sr-speedbar-toggle)
 ;; use hippie-expand instead of dabbrev
 (global-set-key (kbd "M-/") 'hippie-expand)
-(global-set-key (kbd "<f12>") 'bury-buffer)
+(global-set-key (kbd "<f12>") 'buffer-menu)
 (global-set-key (kbd "<f11>") 'switch-to-buffer)
-(global-set-key (kbd "<f10>") 'linum-mode)
+(global-set-key (kbd "<f10>") 'kill-buffer)
 (global-set-key (kbd "<f9>") 'goto-line)
+(global-set-key (kbd "<f8>") 'linum-mode)
+(global-set-key (kbd "<f7>") 'bury-buffer)
+(global-set-key (kbd "<f2>") 'sr-speedbar-toggle)
 (global-set-key (kbd "<f1>") 'other-window)
-;; switch to html mode 
+;; switch to html mode
 (global-set-key (kbd "<C-f10>") 'html-mode)
 ;; switch to javascript mode when working on inline js in html file
 (global-set-key (kbd "<C-f11>") 'js-mode)
 
-;; enable line numbers by default and add a space after the number 
+;; enable line numbers by default and add a space after the number
 (global-linum-mode)
 (setq linum-format "%d ")
 
 ;; set the window title to be filename and path
 ;; (setq frame-title-format '("Emacs @ " system-name ": %b %+%+ %f"))
 (setq frame-title-format '("Emacs @ " ": %b %+%+ %f"))
-
