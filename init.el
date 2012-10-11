@@ -43,7 +43,6 @@
 ;;default live packs
 (let* ((live-dir (file-name-as-directory "live")))
   (setq live-packs (list (concat live-dir "foundation-pack")
-                         (concat live-dir "colour-pack")
                          (concat live-dir "clojure-pack")
                          (concat live-dir "lang-pack")
                          (concat live-dir "power-pack"))))
@@ -73,6 +72,7 @@
 
 ;; ############ TEMPORARY ##  gotta figure out where to put this
 ;; remap C-x C-b to show buffers in current window
+(load-theme 'tsdh-dark t)
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
 ;; use hippie-expand instead of dabbrev
 (global-set-key (kbd "M-/") 'hippie-expand)
