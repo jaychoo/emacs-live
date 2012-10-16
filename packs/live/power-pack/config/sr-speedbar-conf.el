@@ -1,4 +1,4 @@
-;; include the sr-speedbar and configure some speedbar stuff 
+;; include the sr-speedbar and configure some speedbar stuff
 (require 'sr-speedbar)
 ;; (setq speedbar-directory-unshown-regexp "^$")
 (setq speedbar-directory-unshown-regexp "^\\(CVS\\|RCS\\|SCCS\\|\\.\\.*$\\)\\'")
@@ -10,5 +10,5 @@
  '(setq sr-speedbar-width-console 200)
 )
 (make-face 'speedbar-face)
-(set-face-font 'speedbar-face "Inconsolata-12")
+;;(set-face-font 'speedbar-face "Inconsolata-12")
 (setq speedbar-mode-hook '(lambda () (buffer-face-set 'speedbar-face)))
