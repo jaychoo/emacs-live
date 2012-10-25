@@ -96,3 +96,30 @@
 ;; set the window title to be filename and path
 ;; (setq frame-title-format '("Emacs @ " system-name ": %b %+%+ %f"))
 (setq frame-title-format '("Emacs @ " ": %b %+%+ %f"))
+
+
+;; Global settings
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-line-function 'insert-tab)
+(setq line-number-mode t)
+(setq column-number-mode t)
+(transient-mark-mode t)
+(set-default 'indicate-empty-lines t)
+(setq inhibit-startup-message t)
+(global-auto-revert-mode t)
+(global-linum-mode t)
+(setq linum-format "%4d ")
+(global-hl-line-mode 1)
+(global-visual-line-mode 1)
+(set-face-background 'hl-line "#305")
+(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+(line-number-mode 1)
+(set-default 'fill-column 80)
+(global-font-lock-mode 1)
+(show-paren-mode 1)
+(global-set-key "\C-l" 'goto-line)
+(setq search-highlight t)
+
+;; Python
+(add-hook 'python-mode-hook '(lambda () (define-key python-mode-map "\C-m" 'newline-and-indent)))
