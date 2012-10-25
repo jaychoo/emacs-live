@@ -12,3 +12,4 @@
 (live-load-config-file "highlight-tail-conf.el")
 (live-load-config-file "gist-conf.el")
 (live-load-config-file "sr-speedbar-conf.el")
+(live-load-config-file "auto-complete-conf.el")
