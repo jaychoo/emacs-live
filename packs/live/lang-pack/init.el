@@ -10,3 +10,4 @@
 (live-load-config-file "actionscript-conf.el")
 (live-load-config-file "phpmode-conf.el")
 (live-load-config-file "scala-conf.el")
+(live-load-config-file "lua-conf.el")
