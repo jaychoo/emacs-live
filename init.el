@@ -77,13 +77,13 @@
 ;; use hippie-expand instead of dabbrev
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "<f12>") 'buffer-menu)
-(global-set-key (kbd "<f11>") 'switch-to-buffer)
-(global-set-key (kbd "<f10>") 'kill-buffer)
+(global-set-key (kbd "<f1>") 'switch-to-buffer)
+;;(global-set-key (kbd "<f10>") 'kill-buffer)
 (global-set-key (kbd "<f9>") 'goto-line)
 (global-set-key (kbd "<f8>") 'linum-mode)
 (global-set-key (kbd "<f7>") 'bury-buffer)
 (global-set-key (kbd "<f2>") 'sr-speedbar-toggle)
-(global-set-key (kbd "<f1>") 'other-window)
+;;(global-set-key (kbd "<f1>") 'other-window)
 ;; switch to html mode
 (global-set-key (kbd "<C-f10>") 'html-mode)
 ;; switch to javascript mode when working on inline js in html file
@@ -148,3 +148,20 @@
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'solarized-dark t)
+
+;; Flymake
+(add-to-list 'load-path "~/.emacs.d/vendor")
+(add-hook 'find-file-hook 'flymake-find-file-hook)
+(when (load "flymake" t)
+  (defun flymake-pyflakes-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                       'flymake-create-temp-inplace))
+           (local-file (file-relative-name
+                        temp-file
+                        (file-name-directory buffer-file-name))))
+      (list "pycheckers"  (list local-file))))
+  (add-to-list 'flymake-allowed-file-name-masks
+               '("\\.py\\'" flymake-pyflakes-init)))
+(load-library "flymake-cursor")
+(global-set-key [f10] 'flymake-goto-prev-error)
+(global-set-key [f11] 'flymake-goto-next-error)
