@@ -72,7 +72,7 @@
 
 ;; ############ TEMPORARY ##  gotta figure out where to put this
 ;; remap C-x C-b to show buffers in current window
-(load-theme 'tsdh-dark t)
+;;(load-theme 'tsdh-dark t)
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
 ;; use hippie-expand instead of dabbrev
 (global-set-key (kbd "M-/") 'hippie-expand)
@@ -147,7 +147,7 @@
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'solarized-dark t)
+;;(load-theme 'solarized-dark t)
 
 ;; Flymake
 (add-to-list 'load-path "~/.emacs.d/vendor")
