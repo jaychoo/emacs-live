@@ -120,6 +120,8 @@
 (show-paren-mode 1)
 (global-set-key "\C-l" 'goto-line)
 (setq search-highlight t)
+;; Auto start speedbar
+(sr-speedbar-open)
 
 ;; Python
 (add-hook 'python-mode-hook '(lambda () (define-key python-mode-map "\C-m" 'newline-and-indent)))
@@ -128,7 +130,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (tango-dark)))
+ ;;'(custom-enabled-themes (quote (tango-dark)))
  '(sclang-auto-scroll-post-buffer t)
  '(sclang-eval-line-forward nil)
  '(sclang-help-path (quote ("/Applications/SuperCollider/Help")))
@@ -179,3 +181,7 @@
     (switch-to-buffer-other-window "*ansi-term*")))
 
 (global-set-key (kbd "C-c t") 'visit-term-buffer)
+
+;; go mode
+(setq load-path (cons "/usr/local/go/misc/emacs/go-mode" load-path))
+(require 'go-mode)

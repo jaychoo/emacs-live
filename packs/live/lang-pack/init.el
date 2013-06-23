@@ -11,4 +11,4 @@
 (live-load-config-file "phpmode-conf.el")
 (live-load-config-file "scala-conf.el")
 (live-load-config-file "lua-conf.el")
-(live-load-config-file "gomode-conf.el")
+;;(live-load-config-file "gomode-conf.el")
